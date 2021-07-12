@@ -104,6 +104,8 @@ class TagController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tags = Tag::findOrFail($id);
+        $tags->delete();
+        return redirect()->back()->with('success','Data berhasil dihapus');
     }
 }
