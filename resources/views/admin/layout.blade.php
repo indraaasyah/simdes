@@ -13,21 +13,17 @@
 
   <!-- PLUGINS CSS STYLE -->
   <link href="{{asset('admin/assets/plugins/simplebar/simplebar.css')}}" rel="stylesheet"/>
-  <link href="{{asset('admin/assets/plugins/nprogress/nprogress.css')}}" rel="stylesheet"/>
-
-  <link href="{{asset('admin/assets/assets/plugins/toaster/toastr.min.css')}}" rel="stylesheet" />
-  <link href="{{asset('admin/assets/assets/plugins/nprogress/nprogress.css')}}" rel="stylesheet" />
-  <link href="{{asset('admin/assets/assets/plugins/flag-icons/css/flag-icon.min.css')}}" rel="stylesheet"/>
-  <link href="{{asset('admin/assets/assets/plugins/jvectormap/jquery-jvectormap-2.0.3.css')}}" rel="stylesheet" />
-  <link href="{{asset('admin/assets/assets/plugins/ladda/ladda.min.css')}}" rel="stylesheet" />
-  <link href="{{asset('admin/assets/assets/plugins/select2/css/select2.min.css')}}" rel="stylesheet" />
-  <link href="{{asset('admin/assets/assets/plugins/daterangepicker/daterangepicker.css')}}" rel="stylesheet" />
+  <link href="{{asset('admin/assets/plugins/nprogress/nprogress.css')}}" rel="stylesheet" />
+  <link href="{{asset('admin/assets/plugins/flag-icons/css/flag-icon.min.css')}}" rel="stylesheet"/>
+  <link href="{{asset('admin/assets/plugins/ladda/ladda.min.css')}}" rel="stylesheet" />
+  <link href="{{asset('admin/assets/plugins/select2/css/select2.min.css')}}" rel="stylesheet" />
 
   <!-- No Extra plugin used -->
   <link href="{{asset('admin/assets/plugins/jvectormap/jquery-jvectormap-2.0.3.css')}}" rel="stylesheet"/>
   <link href="{{asset('admin/assets/plugins/daterangepicker/daterangepicker.css')}}" rel="stylesheet"/>
 
   <link href="{{asset('admin/assets/plugins/toastr/toastr.min.css')}}" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
   <!-- SLEEK CSS -->
   <link id="sleek-css" rel="stylesheet" href="{{asset('admin/assets/css/sleek.css')}}"/>
@@ -109,5 +105,11 @@
     <script src="{{asset('admin/assets/js/date-range.js')}}"></script>
     <script src="{{asset('admin/assets/js/map.js')}}"></script>
     <script src="{{asset('admin/assets/js/custom.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script>
+      @if(Session::has('success'))
+        toastr.success("{{Session::get('success')}}", "Sukses")
+      @endif
+    </script>
   </body>
 </html>

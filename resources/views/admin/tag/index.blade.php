@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="breadcrumb-wrapper">
-    <h1>Kategori</h1>
+    <h1>Tag</h1>
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb p-0">
       <li class="breadcrumb-item">
@@ -13,7 +13,7 @@
       <li class="breadcrumb-item">
         article
       </li>
-      <li class="breadcrumb-item" aria-current="page">kategori</li>
+      <li class="breadcrumb-item" aria-current="page">tag</li>
     </ol>
   </nav>
 </div>
@@ -22,7 +22,7 @@
     <div class="card card-default">
       <div class="card-body">
         <div class="mb-3">
-          <a href="{{ route('categories.create')}}" class="btn btn-info">Tambah Kategori</a>
+          <a href="{{ route('tags.create')}}" class="btn btn-info">Tambah Tag</a>
         </div>
         <table class="table table-striped">
           <thead>
@@ -33,15 +33,15 @@
             </tr>
           </thead>
           <tbody>
-            @foreach ($categories as $category => $kategori)
+            @foreach ($tags as $tag => $hasil)
             <tr>
-              <td scope="row">{{ $category + $categories->firstitem()}}</td>
-              <td>{{ $kategori->name }}</td>
+              <td scope="row">{{ $tag + $tags->firstitem()}}</td>
+              <td>{{ $hasil->name }}</td>
               <td>
-                <form action="{{ route('categories.destroy', $kategori->id) }}" method="POST">
+                <form action="{{ route('tags.destroy', $hasil->id) }}" method="POST">
                   @method('delete')
                   @csrf
-                  <a href="{{ route('categories.edit', $kategori->id)}}" class="btn btn-sm btn-primary">Edit</a>
+                  <a href="{{ route('tags.edit', $hasil->id)}}" class="btn btn-sm btn-primary">Edit</a>
                   <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                 </form>
               </td>
@@ -49,7 +49,7 @@
             @endforeach
           </tbody>
         </table>
-        {{ $categories->links() }}
+        {{ $tags->links() }}
       </div>
     </div>
   </div>

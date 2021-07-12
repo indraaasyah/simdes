@@ -1,7 +1,7 @@
 @extends('admin.layout')
 
 @section('content')
-<div class="content">
+
   <div class="breadcrumb-wrapper">
       <h1>Breadcrumb</h1>
     <nav aria-label="breadcrumb">
@@ -57,5 +57,4 @@
       </div>
     </div>
   </div>
-</div>
 @endsection

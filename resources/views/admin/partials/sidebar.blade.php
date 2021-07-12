@@ -58,7 +58,7 @@
                     </a>
                   </li>
                   <li  class="" >
-                    <a class="sidenav-item-link" href="index.html">
+                    <a class="sidenav-item-link" href="{{ route('tags.index')}}">
                       <span class="nav-text">Tag</span>
                     </a>
                   </li>
